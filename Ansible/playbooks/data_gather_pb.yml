@@ -1,8 +1,14 @@
-tasks:
-  - name: gather facts about IOS devices
-    cisco.ios.ios_facts:
-      gather_subset: all
-    register: result
-  - name: show output to screen
-    debug:
-      var: result
+---
+- name: playbook to gather info about devices
+  hosts: all
+  gather_facts: False
+
+  tasks:
+    - name: gather facts about IOS devices
+      cisco.ios.ios_facts:
+        gather_subset: all
+      register: result
+
+    - name: show output to screen
+      debug:
+        var: result
