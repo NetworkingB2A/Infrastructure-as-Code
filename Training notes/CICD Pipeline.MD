@@ -53,3 +53,11 @@ Some notes on pipelines
 Many steps will be involved for this to happen. (here are some of the steps, need to think about it a bit more before. the steps right now will not be in order)
 - need a environment as a "coded network"
 - need to have copies of your network 
+
+
+
+
+
+
+You need to first create your perfect test environment.
+AKA create a digital twin, then copy that XML data you receive and that will be a template that your workflow tool will use to build out the CML topology. (This will be a very tedious process at first but worth it in the end.)
