@@ -1,3 +1,21 @@
+# Basic notes
+### Wildcards
+Wildcards|meaning
+-|-
+*|Matches any characters
+?|Matches any single characters
+[<i>characters</i>]| Match any character that is a member of the set <i>characters</i>
+[<i>!characters</i>]| Match any character that is a not member of the set <i>characters</i>
+[[class]]|Match any character that is a member of the specified class 
+
+Class|Meaning
+-|-
+[:alnum]|Matches any alphanumeric character
+[:alpha]|Matches any alphabetic character
+[:digit]|Matches any numeral
+[:lower]|Matches any lowercase letter
+[:upper]|Matches any uppercase letter
+
 ## Linux file notes
 
 Directory|Purpose
@@ -31,10 +49,28 @@ ls {path name or argument}| List directory contents|
 less|opposite of more| allows you to scroll up and down in a test file (useful)
 mv|
 cp|
-mkdir|
+mkdir||| -p (adds recursive directories)
 ln|
+rm|||-r (means recursive), -f (means force), -rf (recursive and force)
+
+## Tech support commands
+Command|Name|Description|Extra vars
+-|-|-|-
+
+
 
 ## link types
+
 Symbolic links
-- This is really like a shortcut on windows.
+- This is really like a shortcut on windows
+- It is a pointer to the file
+- If you delete the original file, the symbolic link will become useless
+- This is the more modern way of creating links
+- Different iNode numbers
 Hard links
+- A different name for the same file
+- same file size
+- Same iNode numbers
+- Deleting the original file, will still allow hard links to be operational
+Here is a picture of the two links  
+![Picture of two link types](../images/symVShardLinks.png)
