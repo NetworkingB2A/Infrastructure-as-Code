@@ -65,7 +65,10 @@ Parts of Ansible
   - you can use your own CMDB
 - Plugins ( I dont fully understand yet...)
   - python api
-  - code that plugs into the core engine
+  - code that plugs into the core engine  
+  
+You can run the following to check you syntax  
+<code> ansible-playbook {Playbook name} --syntax-check </code>
 
 
 ## Questions
