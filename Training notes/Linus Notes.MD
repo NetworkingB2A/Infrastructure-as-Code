@@ -50,7 +50,7 @@ less|opposite of more| allows you to scroll up and down in a test file (useful)
 mv|
 cp|
 mkdir||| -p (adds recursive directories)
-ln|
+ln original-file-or-directory new-link|link|Creates a link Hard be default|-s (used to create a symbolic link)
 rm|||-r (means recursive), -f (means force), -rf (recursive and force)
 
 ## Tech support commands
