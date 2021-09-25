@@ -1,2 +1,4 @@
 ---
-# tasks file for common
+- name: create SNMP config
+  cisco.ios.ios_config: 
+    src: ../templates/main.j2

@@ -1,0 +1,19 @@
+{%for snmpMain, snmpType in snmp.items()%}
+
+{%if snmpType.type == 'ro' %}
+{%if snmpType.user == 'internal' %}
+snmp-server community {{ _snmpRoCommunity}} ro {{snmpType.communityAcl}}
+{% elif snmpType.user == 'customer' -%}
+snmp-server community {{ _snmpRoCommunity}} ro {{snmpType.communityAcl}}
+{% endif %}
+
+{%elif snmpType.type == 'rw' %}
+{%if snmpType.user == 'internal' %}
+snmp-server community {{ _snmpRoCommunity}} rw {{snmpType.communityAcl}}
+{% elif snmpType.user == 'customer' -%}
+snmp-server community {{ _snmpRoCommunity}} rw {{snmpType.communityAcl}}
+{% endif %}
+
+{% endif %}
+
+{% endfor %}

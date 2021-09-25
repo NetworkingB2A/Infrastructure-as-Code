@@ -1,2 +1,20 @@
 ---
-# vars file for common
+  snmp:
+      SNMPTESTROACL:
+        user: internal
+        communityAcl: SNMPTESTROACL
+        ipaddress: 10.10.10.10
+        permit: true
+        type: ro
+      SNMPTESTROACLCustomerONLY:
+        user: customer
+        communityAcl: SNMPTESTROACLCustomerONLY
+        ipaddress: 15.15.15.15
+        permit: yes
+        type: ro
+      SNMPTESTrwACL:
+        user: internal
+        communityAcl: SNMPTESTrwACL
+        ipaddress: 13.13.13.13
+        permit: yes
+        type: rw
