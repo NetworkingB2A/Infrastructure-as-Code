@@ -1,18 +1,21 @@
 ---
   snmp:
       SNMPTESTROACL:
+        community: '{{ _snmpIntRoCommunity }}'
         user: internal
         communityAcl: SNMPTESTROACL
         ipaddress: 10.10.10.10
         permit: true
         type: ro
       SNMPTESTROACLCustomerONLY:
+        community: '{{ _snmpCustRoCommunity }}'
         user: customer
         communityAcl: SNMPTESTROACLCustomerONLY
         ipaddress: 15.15.15.15
         permit: yes
         type: ro
       SNMPTESTrwACL:
+        community: '{{ _snmpIntRwCommunity }}'
         user: internal
         communityAcl: SNMPTESTrwACL
         ipaddress: 13.13.13.13
