@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" modified="2021-10-03T14:55:11.442Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="wq0aszpFjXnZUshpfVid" version="15.4.1" type="github">
+  <diagram id="o34TGZ0ba165lNjoUqik" name="Page-1">
+    <mxGraphModel dx="780" dy="1154" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9hW6BUb2svwg_h8EHpMg-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="340" width="320" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="9hW6BUb2svwg_h8EHpMg-2" value="VLAN 101" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="135" y="390" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="9hW6BUb2svwg_h8EHpMg-4" value="VXLAN ID (VNI)&lt;br&gt;10001" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="150" y="300" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9hW6BUb2svwg_h8EHpMg-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="340" width="320" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="9hW6BUb2svwg_h8EHpMg-6" value="VLAN 101" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="545" y="390" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="9hW6BUb2svwg_h8EHpMg-7" value="VXLAN ID (VNI)&lt;br&gt;10001" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="560" y="300" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
