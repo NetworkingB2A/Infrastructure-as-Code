@@ -56,7 +56,14 @@ rm|||-r (means recursive), -f (means force), -rf (recursive and force)
 ## Tech support commands
 Command|Name|Description|Extra vars
 -|-|-|-
-
+systemctl {start|stop|reboot|ect} (service)
+hostnamectl|
+which (application name)|
+apt show (application name)
+ps|ps| used to see the top running processes| -ef(to see top processes)
+whoami
+ip link|ip link|tells some data about a link
+ip addr | ip address| This will tell you your ip address
 
 
 ## link types
@@ -74,3 +81,11 @@ Hard links
 - Deleting the original file, will still allow hard links to be operational
 Here is a picture of the two links  
 ![Picture of two link types](../images/symVShardLinks.png)
+
+What is a Daemon?
+- A type of program on unix-like operating systems that run unobtrusively in the background. 
+- sshd is a good example. sshd is a program hat is always running, ready to accept or send ssh connections.
+
+## Notes
+log files are stored under /var/log
+- if you want to learn about less, more, grep, ect. log files are good for learning about the basics
