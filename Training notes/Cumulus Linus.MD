@@ -50,3 +50,20 @@ Key features of infiniband
   - dragonfly+
   - hypercube
   - hyperX
+infiniband architecture 
+- Applications can talk to each other without going though the OS
+- layers
+  - upper layer
+    - describes the how Applications use the Infiniband system 
+      - some protocols used by the uppper layer include
+        - MPI - Message passing interface
+        - NCCL - NVIDIA collections communication library
+        - iSER - RDMA storage protocols
+        - IPoIB - ip over infiniband
+  - Transport layer
+    - A tunnel is created between two apps
+  - network layer
+  - Link layer
+    - local ID or LID 
+    - flow control
+  physical layer 
