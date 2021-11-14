@@ -117,7 +117,7 @@ What is the highest precedence for Ansible vars
 15. Inventory vars
 16. Role defaults
 
-task types
+### task types
 Normal tasks
 - They will run sequentially  
 Handler tasks
@@ -127,12 +127,12 @@ Handler tasks
 - See bottom for an example
 
 
-Loops
+### Loops
 - easiest way is {{ item }} then with_items: and list of items 
 - see code below
 
 
-Roles
+### Roles
 structure of a role directory
 you can create this by hand or with the ansible galaxy command
 <code> 
@@ -161,6 +161,19 @@ roles/
 
 Common is for all if your devices, generally  this is true.  
 you can create different tasks inside your role but Ansible will not pick them up by default. You will need to create a task, give it a unique name. Then in the main.yml task include any task you want and preform and include of the uniquely named yaml files.
+
+
+
+
+
+Tips for using quotes in playbooks\tasks
+1. if I have Jinja variable(eg {{ Variable_name }}) at the beginning or end of the line; otherwise YAML will parse the line as nested objects due to the braces.
+2. If there are any colons in the string. (eg in urls)
+
+
+
+NOTES
+By default, ansible will stop all playbook execution when a task fails, and won't notify any handlers that may need to be triggered. In some cases, this leads to unintended side effects. If you want to make sure handlers always run after a task use notify to call the handler, if the playbook fails, add --force-handlers to your ansible-playbook command.
 
 
 
