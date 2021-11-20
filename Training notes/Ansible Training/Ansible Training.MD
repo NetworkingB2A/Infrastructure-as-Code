@@ -1,3 +1,10 @@
+quick note
+
+use greater than symbol
+ansible with items
+ansible-playbook playbook --list-host
+
+
 # Training Ansible
 
 Create a python virtual environment.
@@ -51,7 +58,7 @@ Parts of Ansible
   - uses Ansible Modules
   - plays are ordered sets of tasks to execute against host selection from your inventory
   - a playbook is a file containing one or more plays.  
-  ![Picture of Ansible playbook](../images/Ansible-playbook.png)
+  ![Picture of Ansible playbook](../../images/Ansible-playbook.png)
 - Modules
   - Bit of code/Tools in your toolkit
   - python, powershell, or any language 
