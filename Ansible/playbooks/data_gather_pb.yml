@@ -4,7 +4,8 @@
   tasks:
     - name: gather facts about IOS devices
       cisco.ios.ios_facts:
-        gather_subset: all
+        gather_subset: 
+          - "!config"
       register: result
 
     - name: show output to screen
