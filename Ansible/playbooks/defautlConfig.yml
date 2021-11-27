@@ -3,7 +3,6 @@
   hosts: all
   roles:
     - role: ../roles/common
-  
-  vars_files:
-  - ../ansibleVault.yml
 
+  vars_files:
+    - ../ansibleVault.yml
