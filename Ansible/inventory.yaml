@@ -1,0 +1,19 @@
+---
+plugin: networktocode.nautobot.inventory
+api_endpoint: https://angell-nautobot/
+token: dbcc7521f06e3a1c312b6dcbc402eeefc42ff01d
+validate_certs: False
+config_context: no
+interfaces: no
+group_by:
+  - device_roles
+query_filters:
+  - role: router
+#  - role: lab-switch
+compose:
+  ansible_host: platform.primary_ip4
+#  ansible_connection: custom_fields.ansible_connection_type
+#  ansible_user: custom_fields.ansible_uname
+#  ansible_password: custom_fields.ansible_password
+#  interfaces_info: config_context.interfaces
+#  routes: config_context.routes
