@@ -7,7 +7,13 @@
         gather_subset:
           - "!config"
       register: result
+    
+    - name: set ansible facts
+      set_fact:
+        interface_data: "{{ result.ansible_facts.ansible_net_interfaces }}"
+
 
     - name: show output to screen
       debug:
-        var: result
+        #var: result.ansible_facts.ansible_net_all_ipv4_addresses[0] | ansible.netcommon.ipaddr
+        var: interface_data["GigabitEthernet0/0"]["ipv4"][0]["address"] | ansible.netcommon.ipaddr
