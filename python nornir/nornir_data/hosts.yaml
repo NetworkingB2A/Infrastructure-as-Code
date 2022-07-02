@@ -1,0 +1,21 @@
+---
+router1:
+  hostname: 192.168.2.241
+  groups:
+    - cisco_group
+router2:
+  hostname: 192.168.2.242
+  groups:
+    - cisco_group
+router3:
+  hostname: 192.168.2.243
+  groups:
+    - cisco_group
+router4:
+  hostname: 192.168.2.244
+  groups:
+    - cisco_group
+router5:
+  hostname: 192.168.2.245
+  groups:
+    - cisco_group
