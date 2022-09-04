@@ -1,7 +1,27 @@
 ---
 - name: playbook to gather info about devices
   hosts: all
+  vars:
+    output_path: "../output"
+    filename: "device_report_{{ date }}.csv"
+
+
   tasks:
+    - name: CSV - Generate output filename
+      set_fact: date="{{lookup('pipe','date +%Y%m%d')}}"
+      run_once: true
+      delegate_to: localhost
+    
+    - name: CSV - Create file and set the header
+      lineinfile:
+        dest: "{{ output_path }}/{{ filename }}"
+        line:
+          hostname,ios_image
+        create: yes
+        state: present
+      run_once: true
+      delegate_to: localhost
+
     - name: gather facts about IOS devices
       cisco.ios.ios_facts:
         gather_subset:
@@ -10,10 +30,18 @@
     
     - name: set ansible facts
       set_fact:
-        interface_data: "{{ result.ansible_facts.ansible_net_interfaces }}"
+        device_data:
+          device_hostname : "{{ result.ansible_facts.ansible_net_hostname }}"
+          interface_data: "{{ result.ansible_facts.ansible_net_interfaces }}"
+          device_ios: "{{ result.ansible_facts.ansible_net_version }}"
 
-
-    - name: show output to screen
-      debug:
-        #var: result.ansible_facts.ansible_net_all_ipv4_addresses[0] | ansible.netcommon.ipaddr
-        var: interface_data["GigabitEthernet0/0"]["ipv4"][0]["address"] | ansible.netcommon.ipaddr
+    #- name: show output to screen
+    #  debug:
+    #    var: result
+    #    #var: interface_data["GigabitEthernet0/0"]["ipv4"][0]["address"] | ansible.netcommon.ipaddr
+    
+    - name: CSV - Write information into .csv file
+      lineinfile:
+        #insertafter: EOF
+        dest: "{{ output_path }}/{{ filename }}"
+        line: "{{ device_data.device_hostname }}, {{ device_data.device_ios }}"
