@@ -2,7 +2,7 @@
 - name: playbook to gather info about devices
   hosts: all
   vars:
-    output_path: "../output"
+    output_path: "output"
     filename: "device_report_{{ date }}.csv"
 
 
