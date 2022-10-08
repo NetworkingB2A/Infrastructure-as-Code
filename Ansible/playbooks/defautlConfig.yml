@@ -4,5 +4,3 @@
   roles:
     - role: ../roles/common
 
-  vars_files:
-    - ../ansibleVault.yml

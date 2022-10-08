@@ -1,0 +1,4 @@
+{%for community in snmp.communities%}
+snmp-server community {{ community.key }} {{ community.write_permission | upper}} {{ community.acl}}
+{% endfor %}
+!

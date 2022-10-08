@@ -1,23 +1,18 @@
 ---
-  snmp:
-      SNMPTESTROACL:
-        community: '{{ _snmpIntRoCommunity }}'
-        user: internal
-        communityAcl: SNMPTESTROACL
-        ipaddress: 10.10.10.10
-        permit: true
-        type: ro
-      SNMPTESTROACLCustomerONLY:
-        community: '{{ _snmpCustRoCommunity }}'
-        user: customer
-        communityAcl: SNMPTESTROACLCustomerONLY
-        ipaddress: 15.15.15.15
-        permit: yes
-        type: ro
-      SNMPTESTrwACL:
-        community: '{{ _snmpIntRwCommunity }}'
-        user: internal
-        communityAcl: SNMPTESTrwACL
-        ipaddress: 13.13.13.13
-        permit: yes
-        type: rw
+snmp:
+  communities: 
+    - key: community_RO_key
+      acl: community_RO_acl
+      write_permission: RO
+    - key: community_RW_key
+      acl: community_RW_acl
+      write_permission: RW
+  hosts:
+    - server_ip: 1.1.1.1
+      version: 1
+    - server_ip: 2.2.2.2
+      version: 1
+ntp_servers:
+  - 1.1.1.1
+  - 3.3.3.3
+  - 4.4.4.4
