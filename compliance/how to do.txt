@@ -1,0 +1,32 @@
+
+The reporting of all of this needs to be separate. This guy did something really good and created a role with the reporting.
+
+I will need to build the first login to the device to gather all the details at the start. Building this in a fashion so i can add easy to it makes a lot of sense here.
+
+first I need to a list of the NTP servers that are configured, register that to a temp list
+- This may make sense to use specific modules and start easy
+
+then compare the list of ntp servers to the list of expected ntp servers (if my list is different may be hard)
+
+
+
+
+
+
+template with variable 
+
+for server in servers
+ntp server '{{ntp_server}}'
+end for 
+
+Different types of parsers
+- Native Ansible galaxy cisco
+- Genie parser
+- NTC_templates parser 
+- Napalm parser 
+
+Options for Validation
+- Ansible built-in asserts
+- Napalm Validation - not really going to work for everything i want.
+- compare to a template??
+- Some custom solution?

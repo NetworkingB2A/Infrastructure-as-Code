@@ -1,0 +1,23 @@
+---
+- name: Validate ntp configuration
+  hosts: all
+  connection: local
+
+  vars:
+    val_dir: "../validate"
+
+  tasks:
+  - name: Use Napalm to automatically validate LLDP neighbours
+    napalm_validate:
+      validation_file: "ntp_standard.yml"
+    register: val_ntp
+    ignore_errors: yes
+
+  - name: Display full compliance report
+    debug:
+      var: val_ntp.compliance_report
+
+  - name: Compliance check failed
+    fail:
+      msg: "Non-compliant state encountered. Refer to the full report."
+    when: not val_ntp.compliance_report.complies

@@ -1,0 +1,15 @@
+---
+- name: playbook to gather info about devices
+  hosts: all
+
+  
+  tasks:
+    - name: gather currently configured NTP servers
+      cisco.ios.ios_command:
+        commands:
+          - show run | inc ntp
+      register: show_command
+
+    - name: show output to screen
+      debug:
+        var: show_command
