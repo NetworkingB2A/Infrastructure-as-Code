@@ -61,3 +61,27 @@ Many steps will be involved for this to happen. (here are some of the steps, nee
 
 You need to first create your perfect test environment.
 AKA create a digital twin, then copy that XML data you receive and that will be a template that your workflow tool will use to build out the CML topology. (This will be a very tedious process at first but worth it in the end.)
+
+
+## Github actions
+Events
+- This is the trigger to start a workflow
+Jobs
+- Jobs consite of steps and actions
+Runners
+- This is a container enviroment that will run our code 
+- Default github will run this for you, but you have the option to host your own if you would like
+Steps
+- Steps are a list of actions that must be done
+actions
+
+for github the naming convention needs to be 
+repo name/.github/workflows/filename.yml
+
+
+
+when user updates sharepoint list, event is triggered. 
+power automate creates a either an issue or a PR that will update a Json file (might not be json, but it could be) I will also want a check to be done to see if user updated file correctly
+I need a PR to be created and I need someone to manually approve it inside of github. once approval and merge is complete. 
+CD will take into action and will go to service now to update the fields for the device type.
+testing will need to happen to to check see if device type is in snow, or dnac.
