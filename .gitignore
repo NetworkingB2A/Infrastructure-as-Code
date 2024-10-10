@@ -109,6 +109,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.vscode/
+*venv*/
 
 # Spyder project settings
 .spyderproject
@@ -130,3 +132,9 @@ dmypy.json
 
 # Data output
 Ansible/output/
+logs/
+
+
+# Ansible
+.vaultpass
+dev_playbooks/

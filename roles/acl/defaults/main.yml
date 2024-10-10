@@ -1,0 +1,60 @@
+---
+# defaults file for acl
+save_state: modified
+acl_state: replaced
+acl_config:
+  - afi: ipv4
+    acls:
+      - name: snmp_access
+        acl_type: standard
+        aces:
+          - grant: permit
+            source:
+              host: 10.20.20.10
+          - grant: permit
+            source:
+              host: 10.20.10.20
+          - grant: permit
+            source:
+              host: 10.20.10.18
+          - grant: permit
+            source:
+              host: 10.20.30.10
+          - grant: permit
+            source:
+              host: 10.20.10.15
+          - grant: permit
+            source:
+              host: 10.20.10.10
+          - grant: permit
+            source:
+              host: 10.20.10.40
+          - grant: permit
+            source:
+              host: 10.150.20.15
+          - grant: permit
+            source:
+              host: 10.150.40.18
+          - grant: permit
+            source:
+              host: 10.150.10.65
+          - grant: permit
+            source:
+              host: 10.150.100.20
+          - grant: permit
+            source:
+              address: 10.100.100.0
+              wildcard_bits: 0.0.0.31
+          - grant: permit
+            source:
+              address: 10.200.200.0
+              wildcard_bits: 0.0.0.255
+          - grant: permit
+            source:
+              address: 192.168.0.0
+              wildcard_bits: 0.0.255.255
+          - remarks:
+            - snmp services
+            - prime services
+            - CCenter
+            - logging centers

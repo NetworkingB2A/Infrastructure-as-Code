@@ -1,0 +1,19 @@
+---
+- name: Gather config
+  gather_facts: false
+  hosts: all
+  vars_files:
+      - ../vault.yml
+  tasks:
+  # - name: Gather all legacy facts
+  #   cisco.ios.ios_facts:
+  #     gather_subset: all
+  #   register: ios_facts
+  - name: Gather facts of acl
+    cisco.ios.ios_acls:
+      state: gathered
+    register: ios_acl_facts
+  - name: Febug output
+    ansible.builtin.debug:
+      msg: "{{ ios_acl_facts }}"
+    delegate_to: localhost

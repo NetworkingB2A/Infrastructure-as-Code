@@ -1,0 +1,6 @@
+---
+# handlers file for ntp
+- name: Save IOS Config
+  cisco.ios.ios_config:
+    save_when: '{{ save_state }}'
+  when: ansible_network_os == "cisco.ios.ios"

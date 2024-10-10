@@ -1,0 +1,10 @@
+---
+# defaults file for ntp
+save_state: modified
+ntp_state: replaced
+ntp_servers:
+  servers:
+    - server: 10.10.10.10
+    - server: 10.11.11.11
+    - server: 10.123.123.123
+    - server: 1.1.1.1

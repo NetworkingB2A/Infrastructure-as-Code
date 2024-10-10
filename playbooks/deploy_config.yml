@@ -1,0 +1,17 @@
+---
+- name: Deploy config
+  gather_facts: false
+  hosts: all
+  vars_files:
+    - ../vault.yml
+  tasks:
+  - name: Deploying assigned roles
+    ansible.builtin.include_role:
+      name: '{{ item }}'
+    with_items:
+      - ntp
+      - acl
+    vars:
+      ntp_state: replaced
+      acl_state: replaced
+

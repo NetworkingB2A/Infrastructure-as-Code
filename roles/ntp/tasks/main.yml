@@ -1,0 +1,12 @@
+---
+# tasks file for ntp
+- name: Deploy NTP tasks for Cisco IOS
+  when: ansible_network_os == "cisco.ios.ios"
+  notify: Save IOS Config
+  block: 
+    - name: Deploy NTP Config for Cisco IOS
+      cisco.ios.ios_ntp_global:
+        config: "{{ ntp_servers }}"
+        state: "{{ ntp_state }}"
+  
+    

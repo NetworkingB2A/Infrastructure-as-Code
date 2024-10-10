@@ -1,0 +1,23 @@
+plugin: netbox.netbox.nb_inventory
+env:
+  api_endpoint: '{{ NETBOX_API }}'
+  token: '{{ NETBOX_TOKEN }}'
+
+
+validate_certs: true
+config_context: true
+flatten_local_context_data: false
+flatten_config_context: true
+
+groups: 
+  routers: inventory_hostname.startswith('router')
+  switches: inventory_hostname.startswith('switch')
+group_by:
+  - device_roles
+device_query_filters:
+  - has_primary_ip: true
+
+compose:
+  ansible_network_os: platform.slug | regex_replace('^cisco-ios$', 'cisco.ios.ios')
+  ansible_connection: ansible_connection | default('ansible.netcommon.network_cli')
+  ansible_ssh_common_args: '-o KexAlgorithms=+diffie-hellman-group-exchange-sha1 -o KexAlgorithms=+diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-rsa'

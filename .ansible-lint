@@ -1,0 +1,5 @@
+---
+exclude_paths: 
+  - dev_playbooks/*
+  - .ansible-lint
+  - *.json
